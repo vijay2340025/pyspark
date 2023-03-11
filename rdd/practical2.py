@@ -1,3 +1,16 @@
+"""
+Transformations -> Narrow vs Wide Transformations; eg: map, flatmap and filter
+
+Narrow - No shuffling is involved
+(shuffling is mechanism for redistributing or re-partitioning data
+so that the data is grouped differently across partitions in the cluster)
+
+Wide - shuffling is involved; eg: reduceByKey, groupByKey (movement of data required as we need to group)
+
+Stages: Marked by shuffle boundaries (whenever we encounter wide transformations we will have one stage)
+
+"""
+
 from pyspark import SparkConf, SparkContext
 
 if __name__ == '__main__':
